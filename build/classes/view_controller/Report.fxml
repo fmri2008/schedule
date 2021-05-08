@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.ReportController">
+   <children>
+      <TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="apptReportTab" text="Number of Appointments by Type">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="600.0">
+                     <children>
+                        <TableView fx:id="apptReportTable" prefHeight="322.0" prefWidth="600.0">
+                           <columns>
+                              <TableColumn fx:id="colMonth" prefWidth="109.0" text="Month" />
+                              <TableColumn fx:id="colApptType" prefWidth="153.0" text="Appointment Type" />
+                              <TableColumn fx:id="colAmount" prefWidth="107.0" text="Amount" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="scheduleReportTab" text="Schedule for Each User">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="35.0" layoutY="320.0" text="Select A User" />
+                        <ComboBox fx:id="userComboBox" layoutX="35.0" layoutY="336.0" prefWidth="150.0" />
+                        <TableView fx:id="apptTable" prefHeight="313.0" prefWidth="600.0">
+                           <columns>
+                              <TableColumn fx:id="colTitle" prefWidth="109.0" text="Title" />
+                              <TableColumn fx:id="colType" prefWidth="153.0" text="Type" />
+                              <TableColumn fx:id="colCustomer" prefWidth="107.0" text="Customer" />
+                              <TableColumn fx:id="colStart" prefWidth="107.0" text="Start" />
+                              <TableColumn fx:id="colEnd" prefWidth="107.0" text="End" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="CustomerReportTab" text="Customer Report">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="apptTableCustomerTab" prefHeight="313.0" prefWidth="600.0">
+                           <columns>
+                              <TableColumn fx:id="colTitleCustomerTab" prefWidth="109.0" text="Title" />
+                              <TableColumn fx:id="colTypeCustomerTab" prefWidth="153.0" text="Type" />
+                              <TableColumn fx:id="colUserCustomerTab" prefWidth="107.0" text="User" />
+                              <TableColumn fx:id="colStartCustomerTab" prefWidth="107.0" text="Start" />
+                              <TableColumn fx:id="colEndCustomerTab" prefWidth="107.0" text="End" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="35.0" layoutY="320.0" text="Select A Customer" />
+                        <ComboBox fx:id="customerComboBox" layoutX="35.0" layoutY="336.0" prefWidth="150.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ButtonBar layoutX="370.0" layoutY="355.0" prefHeight="40.0" prefWidth="218.0">
+         <buttons>
+            <Button fx:id="ApptsBtn" mnemonicParsing="false" onAction="#handleSelectAppts" prefHeight="25.0" prefWidth="152.0" text="Appointments" />
+            <Button fx:id="customerBtn" mnemonicParsing="false" onAction="#handleSelectReports" text="Customers" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
